@@ -1,0 +1,36 @@
+mat-card {
+    align-items: stretch;
+    padding: 0;
+
+    .card-header {
+        height: 120px;
+        background-color: #BDBCFF;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        padding: 10px;
+
+        mat-card-subtitle {
+            color: #fff;
+            text-align: right;
+            margin: 0;
+            font-size: 24px;
+        }
+    }
+
+    mat-card-content {
+        padding: 10px;
+        margin: 0px;
+    }
+
+    mat-card-actions {
+        margin: 10px !important;
+        padding: 0;
+
+        button {
+            width: 100%;
+        }
+    }
+}

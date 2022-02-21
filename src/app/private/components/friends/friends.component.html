@@ -1,0 +1,21 @@
+<h1>Games</h1>
+<div class="friends-search" fxLayoutGap="35px" fxLayoutAlign="space-between center">
+    <mat-form-field>
+        <mat-label>Search Friends</mat-label>
+        <input matInput placeholder="Search Friends">
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="button">Search</button>
+</div>
+
+
+<h1>My Friends</h1>
+
+
+
+<h1 style="display: none;">Search Friends:</h1>
+<mat-card *ngFor="let user of users" class="friend-card" fxLayout="row" fxLayoutAlign="space-between center">
+    <p class="friend-name">{{user.username}}</p>
+    <button mat-raised-button color="primary" style="display: none;">Add to Friends</button>
+    <button mat-raised-button color="warn">Remove friend</button>
+</mat-card>
+

@@ -1,0 +1,39 @@
+<h1>Games</h1>
+<div class="games-search" fxLayoutGap="35px" fxLayoutAlign="space-between center">
+    <mat-form-field>
+        <mat-label>Search Games</mat-label>
+        <input matInput placeholder="Search Games">
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="button">Search</button>
+</div>
+
+
+<h1>Featured Games</h1>
+<div class="games-wrapper" fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="start start">
+    <div class="games-results" fxFlex="80">
+        <app-game-card></app-game-card>
+        <app-game-card></app-game-card>
+        <app-game-card></app-game-card>
+        <app-game-card></app-game-card>
+        <app-game-card></app-game-card>
+        <app-game-card></app-game-card>
+    </div>
+    <mat-divider [vertical]="true"></mat-divider>
+    <div class="query-filters">
+        <h3>Filter by price</h3>
+        <input type="range" min="0" max="100" fxLayoutAlign="stretch" style="width: 100%;">
+        <br>
+        <h3>Filter by tag</h3>
+        <ul>
+            <li>
+                <label><input type="checkbox" checked>Indie</label>
+            </li>
+            <li>
+                <label><input type="checkbox" checked>Action</label>
+            </li>
+            <li>
+                <label><input type="checkbox" checked>Adventure</label>
+            </li>
+        </ul>
+    </div>
+</div>

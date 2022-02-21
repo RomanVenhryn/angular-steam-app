@@ -1,0 +1,26 @@
+.games-search mat-form-field {
+    flex: 80%;
+}
+
+.games-results {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    app-game-card {
+        margin: 15px;
+        width: 100%;
+        max-width: 270px;
+    }
+}
+
+.query-filters ul {
+    
+    padding: 0;
+
+    li {
+        list-style-type: none;
+    }
+}
