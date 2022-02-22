@@ -13,8 +13,8 @@ import { UserService } from '../core/services/user.service';
 })
 export class PublicComponent implements OnInit {
   formGroup: FormGroup;
-  loading = false;
   submitted = false;
+  loading = false;
   returnUrl: string;
 
 
@@ -48,10 +48,14 @@ export class PublicComponent implements OnInit {
     }
 
     this.loading = true;
-    this.authService.login(this.formGroup.controls['email'].value, this.formGroup.controls['password'].value).subscribe(
-      data => {
-        this.router.navigate([this.returnUrl]);
-    });
+        this.authService.login(this.formGroup.controls['email'].value, this.formGroup.controls['password'].value)
+            .pipe(first())
+            .subscribe(
+                data => {
+                    this.router.navigate([this.returnUrl]);
+                });
+
+    //this.authService.login(this.formGroup.controls['email'].value, this.formGroup.controls['password'].value);
 
   }
 

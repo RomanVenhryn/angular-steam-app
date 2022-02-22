@@ -8,13 +8,16 @@ import { ProfileComponent } from './private/components/profile/profile.component
 import { PrivateComponent } from './private/private.component';
 import { PublicComponent } from './public/public.component';
 
+import { AuthGuard } from './core/guards/auth.guard';
+
 const routes: Routes = [
   { path: '', component: PrivateComponent,
+  canActivateChild: [AuthGuard],
   children:[
     {
       path:'',
       redirectTo: 'games',
-      pathMatch: 'full' 
+      pathMatch: 'full'
     },
     {
      path : 'games',
