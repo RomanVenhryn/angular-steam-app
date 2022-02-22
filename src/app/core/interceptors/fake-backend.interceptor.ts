@@ -23,18 +23,29 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<unknown>> {
 
-    // array in local storage for registered users
-    this.userService.getUsers().subscribe(users => this.users = users);
-    console.log(this.users);
+    //console.log(this.userService);
+
+    let users;
+
+    try {
+      // array in local storage for registered users
+      this.userService.getUsers().subscribe(users => {
+        users = users; 
+      });
+    } catch(e) {
+      console.log(e);
+    }
+
+    console.log(users);
 
     if (request.url.endsWith('/users/authenticate') && request.method === 'POST') {
-      console.log(request)
+      //console.log(request)
       // find if any user matches login credentials
       let filteredUsers = this.users.filter(user => {
           return user.username === request.body.username && user.password === request.body.password;
       });
 
-      console.log(request);
+      //console.log(request);
 
       if (filteredUsers.length) {
           // if login details are valid return 200 OK with user details and fake jwt token
